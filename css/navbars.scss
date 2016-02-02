@@ -8,19 +8,24 @@ nav.navbar{
         padding: 0;
         overflow: hidden;
     }
-    
-    & li.header {
-        font-weight:bold;
-    }
-    & li.header a {
-        padding-bottom: 13px;
-    }
-    & li.menu{
+    & li:not(.header) {
         display: none;
     }
-
-    & li {
+    & li.header a {
+        font-weight: bold;
+        padding-bottom: 13px;
+        margin-right: 10%;
+    }
+    & li.menu{
+        display: block;
         float: left;
+        margin-left: 15px;
+    }
+    & li.menu a:active & li:not(.header) {
+            display: block;
+    }
+    & li {
+        float: none;
     }
     & li a {
         display: block;
@@ -31,6 +36,11 @@ nav.navbar{
         -webkit-transition:all 0.3s ease;
         transition:all 0.3s ease
     }
+    & li.showMenu {
+        display: block !important;
+        -webkit-transition:all 0.3s ease;
+        transition:all 0.3s ease;
+    }
 
     & a:hover:not(.active) {
         color: #ccc;
@@ -39,20 +49,14 @@ nav.navbar{
         color: black;
         background-color: #ddd;
     }
-    @media screen and (max-width: 600px){
+    @media screen and (min-width: 600px){
         & ul li {
-            float: none;
-        }
-        & li:not(.header) {
-            display: none;
-        }
-        & li.menu {
-            display: block;
             float: left;
-            margin-left: 15px;
+            display: block !important;
         }
-        & li.menu a:active + & li:not(.header) {
-            display: block;
+        
+        & li.menu {
+            display: none !important;
         }
     }
     

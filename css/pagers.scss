@@ -1,0 +1,26 @@
+ul.pager {
+    padding: 5px;
+    overflow: hidden;
+    list-style-type: none !important;
+    & li a {
+        display: block;
+        color: #666;
+        background-color: #fff;
+        text-align: center;
+        padding: 10px 12px;
+        text-decoration: none;
+        -webkit-transition:all 0.3s ease;
+        transition:all 0.3s ease
+    }
+    & li a:hover {
+        color: #ccc !important;
+    }
+    & li.previous {
+        overflow: hidden;
+        float: left;
+    }
+    & li.next {
+        overflow: hidden;
+        float: right;
+    }
+}

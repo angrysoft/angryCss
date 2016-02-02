@@ -5,10 +5,17 @@
 
 @import 'grid.scss';
 @import 'text.scss';
+@import 'forms.scss';
 @import 'navbars.scss';
 @import 'panels.scss';
+@import 'pagers.scss';
 @import 'colors.scss';
 
+.disabled {
+    cursor:not-allowed;
+    opacity:0.3;
+    pointer-events:none;
+}
 .circle{border-radius:50% !important}
 .round{border-radius:2px !important}
 .round-small{border-radius:4px !important}

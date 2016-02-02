@@ -1,0 +1,86 @@
+.form  {
+    padding: 5px !important;
+    & > * {
+        display: block !important;
+        margin: 5px;
+        margin-bottom: 0;
+    }
+}
+
+.form-inline {
+    padding: 5px !important;
+    & > * {
+        display: block !important;
+        margin: 5px;
+        margin-bottom: 0;
+    }
+     @media screen and (min-width: 600px) {
+         & > * {
+             display: inline-block !important;
+             margin: 5px;
+             margin-bottom: 0;
+             vertical-align: middle;
+         }
+     }
+}
+
+.btn{
+    border:none;
+    display:inline-block;
+    outline:0;
+    padding:8px 16px;
+    vertical-align:middle;
+    overflow:hidden;
+    text-decoration:none !important;
+    color:#000;
+    background-color:#fff;
+    text-align:center;
+    transition:.2s ease-out;
+    cursor:pointer;
+    white-space:nowrap;
+    &:hover {
+        box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    }
+    &:active{
+        box-shadow:none;
+    }
+}
+
+.input{
+    padding:8px;
+    border:none;
+    border-bottom:1px solid #808080;
+    overflow: hidden;
+    width: 100%;
+    background-color: transparent;
+    @media screen and (min-width: 600px) {
+        width: auto;
+    }
+    &:focus {
+        outline: none;
+        border-bottom-width: 2px;
+        }
+}
+
+.input-border {
+    padding: 8px;
+    outline-color: #808080;
+    outline-style: solid;
+    outline-width: 1px;
+    overflow: hidden;
+    width: 100%;
+    background-color: #fff;
+    @media screen and (min-width: 600px) {
+        width: auto;
+    }
+    &:focus {
+        outline-width: 2px;
+    }
+}
+
+.label{color:#009688}
+/*.input:not(:valid)~.validate{color:#f44336}*/
+
+input[type=checkbox].check,input[type=radio].radio{width:24px;height:24px;position:relative;top:6px}
+input[type=checkbox].check:checked+.validate,input[type=radio].radio:checked+.validate{color:#009688} 
+input[type=checkbox].check:disabled+.validate,input[type=radio].radio:disabled+.validate{color:#aaa}

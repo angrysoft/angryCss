@@ -18,3 +18,51 @@ nav.black {
         color: #E0E0E0 !important;
     }
 }
+
+
+
+.amber{
+    color:#000 !important;
+    background-color:#ffc107 !important;
+}
+
+nav.amber {
+    & a {
+        color: inherit !important;
+    }
+    & a:hover:not(.active) {
+        color: white !important;
+    }
+    & a.active {
+        background-color: #ffeb3b !important;
+        color: #000 !important;
+    }
+    & li.header a {
+        color: #ff5722 !important;
+    }
+}
+.aqua{color:#000 !important;background-color:#00ffff !important}
+.blue{color:#fff !important;background-color:#2196F3 !important}
+.light-blue{color:#000 !important;background-color:#87CEEB !important}
+.brown{color:#fff !important;background-color:#795548 !important}
+.cyan{color:#000 !important;background-color:#00bcd4 !important}
+.blue-grey{color:#fff !important;background-color:#607d8b !important}
+.green{color:#fff !important;background-color:#4CAF50 !important}
+.light-green{color:#000 !important;background-color:#8bc34a !important}
+.indigo{color:#fff !important;background-color:#3f51b5 !important}
+.khaki{color:#000 !important;background-color:#f0e68c !important}
+.lime{color:#000 !important;background-color:#cddc39 !important}
+.orange{color:#000 !important;background-color:#ff9800 !important}
+.deep-orange{color:#fff !important;background-color:#ff5722 !important}
+.pink{color:#fff !important;background-color:#e91e63 !important}
+.purple{color:#fff !important;background-color:#9c27b0 !important}
+.deep-purple{color:#fff !important;background-color:#673ab7 !important}
+.red{color:#fff !important;background-color:#f44336 !important}
+.sand{color:#000 !important;background-color:#fdf5e6 !important}
+.teal{color:#fff !important;background-color:#009688 !important}
+.yellow{color:#000 !important;background-color:#ffeb3b !important}
+.white{color:#000 !important;background-color:#fff !important}
+.grey{color:#000 !important;background-color:#9e9e9e !important}
+.light-grey{color:#000;background-color:#f1f1f1 !important}
+.dark-grey{color:white;background-color:#616161 !important}
+.w3-opacity{opacity:0.60}.w3-text-shadow{text-shadow:1px 1px 0 #444}.w3-text-shadow-white{text-shadow:1px 1px 0 #ddd}
