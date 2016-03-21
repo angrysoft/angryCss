@@ -1,15 +1,21 @@
 nav.navbar{
-    overflow: hidden;
     background-color: #f3f3f3;
+    white-space: nowrap;
 
     & ul {
         list-style-type: none;
         margin: 0;
         padding: 0;
         overflow: hidden;
+        max-height: 47px;
+        -webkit-transition: all .5s ease-in-out 0s;
+        -moz-transition: all .5s ease-in-out 0s;
+        -ms-transition: all .5s ease-in-out 0s;
+        -o-transition: all .5s ease-in-out 0s;
+         transition: all .5s ease-in-out 0s;
     }
     & li:not(.header) {
-        display: none;
+        /*display: none;*/
     }
     & li.header a {
         font-weight: bold;
@@ -22,12 +28,12 @@ nav.navbar{
         margin-left: 15px;
     }
     & li.menu a:active & li:not(.header) {
-            display: block;
+      display: block;
     }
     & li {
         float: none;
     }
-    & li a {
+    & li a, a:visited {
         display: block;
         color: #666;
         text-align: center;
@@ -36,28 +42,43 @@ nav.navbar{
         -webkit-transition:all 0.3s ease;
         transition:all 0.3s ease
     }
-    & li.showMenu {
-        display: block !important;
-        -webkit-transition:all 0.3s ease;
-        transition:all 0.3s ease;
+    & ul.showMenu {
+      /*display: block !important;*/
+      max-height: 1000px; 
     }
 
     & a:hover:not(.active) {
-        color: #ccc;
+      color: #ccc;
     }
     & a.active {
-        color: black;
-        background-color: #ddd;
+      color: black;
+      background-color: #ddd;
     }
-    @media screen and (min-width: 600px){
+    
+
+    
+    @media screen and (min-width: 700px){
         & ul li {
-            float: left;
-            display: block !important;
+            display: inline-block !important;
         }
         
         & li.menu {
             display: none !important;
         }
+        & li.dropdown {
+          display: inline-block;
+        }
+    
+        & .dropdown-content {
+          display: none;
+          position: absolute;
+          min-width: 160px;
+        }
+
+        & li.dropdown:hover .dropdown-content {
+          display: block;
+        }
     }
     
 }
+

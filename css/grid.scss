@@ -41,7 +41,7 @@
 }
 
 @for $i from 1 through 12 {
-    .col-xs-#{$i} { max-width: #{nth($width,$i)};
+    .col-xs-#{$i} { width: #{nth($width,$i)};
     }
 }
   
@@ -71,7 +71,7 @@
   }
 
   @for $i from 1 through 12 {
-    .col-sm-#{$i} { max-width: #{nth($width,$i)};
+    .col-sm-#{$i} { width: #{nth($width,$i)};
     }
   }
   @for $i from 1 through 12 {
@@ -100,7 +100,7 @@
   }
   
   @for $i from 1 through 12 {
-    .col-md-#{$i} { max-width: #{nth($width,$i)};
+    .col-md-#{$i} { width: #{nth($width,$i)};
     }
   }
   
@@ -130,7 +130,7 @@
   }
   
   @for $i from 1 through 12 {
-    .col-lg-#{$i} { max-width: #{nth($width,$i)};
+    .col-lg-#{$i} { width: #{nth($width,$i)};
     }
   }
   
