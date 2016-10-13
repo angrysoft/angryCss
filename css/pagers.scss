@@ -15,11 +15,11 @@ ul.pager {
     & li a:hover {
         color: #ccc !important;
     }
-    & li.previous {
+    & li:first-child {
         overflow: hidden;
         float: left;
     }
-    & li.next {
+    & li:last-child {
         overflow: hidden;
         float: right;
     }

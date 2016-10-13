@@ -12,7 +12,8 @@ nav.navbar{
         -moz-transition: all .5s ease-in-out 0s;
         -ms-transition: all .5s ease-in-out 0s;
         -o-transition: all .5s ease-in-out 0s;
-         transition: all .5s ease-in-out 0s;
+        transition: all .5s ease-in-out 0s;
+        position: relative;
     }
     & li:not(.header) {
         /*display: none;*/
@@ -57,7 +58,7 @@ nav.navbar{
     
 
     
-    @media screen and (min-width: 700px){
+    @media screen and (min-width: 800px){
         & ul li {
             display: inline-block !important;
         }

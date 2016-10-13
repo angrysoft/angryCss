@@ -38,15 +38,17 @@
 .col-xs-11,
 .col-xs-12 {
   box-sizing: border-box;
+  float: left;
+  width: 100%;
 }
 
 @for $i from 1 through 12 {
-    .col-xs-#{$i} { width: #{nth($width,$i)};
+    .col-xs-#{$i} { width: #{nth($width,$i+1)};
     }
 }
   
-@for $i from 1 through 12 {
-    .col-xs-offset-#{$i} { margin-left: #{nth($width,$i)};
+@for $i from 0 through 12 {
+    .col-xs-offset-#{$i} { margin-left: #{nth($width,$i+1)};
     }
 }
 
@@ -68,14 +70,16 @@
   .col-sm-11,
   .col-sm-12 {
       box-sizing: border-box;
+      float: left;
+      width: 100%;
   }
 
   @for $i from 1 through 12 {
-    .col-sm-#{$i} { width: #{nth($width,$i)};
+    .col-sm-#{$i} { width: #{nth($width,$i+1)};
     }
   }
-  @for $i from 1 through 12 {
-    .col-sm-offset-#{$i} { margin-left: #{nth($width,$i)};
+  @for $i from 0 through 12 {
+    .col-sm-offset-#{$i} { margin-left: #{nth($width,$i+1)};
     }
   }
 }
@@ -97,15 +101,17 @@
   .col-md-11,
   .col-md-12 {
       box-sizing: border-box;
+      float: left;
+      width: 100%;
   }
   
   @for $i from 1 through 12 {
-    .col-md-#{$i} { width: #{nth($width,$i)};
+    .col-md-#{$i} { width: #{nth($width,$i+1)};
     }
   }
   
-  @for $i from 1 through 12 {
-    .col-md-offset-#{$i} { margin-left: #{nth($width,$i)};
+  @for $i from 0 through 12 {
+    .col-md-offset-#{$i} { margin-left: #{nth($width,$i+1)};
     }
   }
 }
@@ -127,15 +133,17 @@
   .col-lg-11,
   .col-lg-12 {
       box-sizing: border-box;
+      float: left;
+      width: 100%;
   }
   
   @for $i from 1 through 12 {
-    .col-lg-#{$i} { width: #{nth($width,$i)};
+    .col-lg-#{$i} { width: #{nth($width,$i+1)};
     }
   }
   
-  @for $i from 1 through 12 {
-    .col-lg-offset-#{$i} { margin-left: #{nth($width,$i)};
+  @for $i from 0 through 12 {
+    .col-lg-offset-#{$i} { margin-left: #{nth($width,$i+1)};
     }
   }
 }

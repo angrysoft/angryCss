@@ -10,12 +10,15 @@
 @import 'panels.scss';
 @import 'pagers.scss';
 @import 'colors.scss';
+@import 'popup.scss';
+@import 'tables.scss';
 
 .disabled {
     cursor:not-allowed;
     opacity:0.3;
     pointer-events:none;
 }
+
 .circle{border-radius:50% !important}
 .round{border-radius:2px !important}
 .round-small{border-radius:4px !important}
@@ -38,3 +41,12 @@
     box-shadow:0 16px 24px 0 rgba(0,0,0,0.22),0 25px 55px 0 rgba(0,0,0,0.21) !important;}
 .shadow-24{
     box-shadow:0 24px 24px 0 rgba(0,0,0,0.2),0 40px 77px 0 rgba(0,0,0,0.22) !important;}
+
+.left {
+    position: absolute;
+    left: 0;
+}
+.right {
+    position: absolute;
+    right: 0;
+}
