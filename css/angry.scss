@@ -10,7 +10,7 @@
 @import 'panels.scss';
 @import 'pagers.scss';
 @import 'colors.scss';
-@import 'popup.scss';
+@import 'modal.scss';
 @import 'tables.scss';
 
 .disabled {
@@ -21,11 +21,11 @@
 
 .circle{border-radius:50% !important}
 .round{border-radius:2px !important}
-.round-small{border-radius:4px !important}
-.round-medium{border-radius:8px !important}
-.round-large{border-radius:16px !important}
-.round-xlarge{border-radius:32px !important}
-.round-xxlarge{border-radius:64px !important}
+.round-small, .round-4 {border-radius:4px !important}
+.round-medium, .round-8 {border-radius:8px !important}
+.round-large, .round-16{border-radius:16px !important}
+.round-xlarge, .round-32{border-radius:32px !important}
+.round-xxlarge, .round-64{border-radius:64px !important}
 
 .shadow {
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.8),0 1px 5px 0 rgba(0,0,0,0.16) !important;}
