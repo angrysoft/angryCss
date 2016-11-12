@@ -51,7 +51,8 @@
 .btn:hover, input[type=button]:hover, .btn-small:hover, .btn-floating:hover, .btn-floating-large:hover{
     box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 }
-.btn:active, .btn-floating:active, .btn-floating-large:active, input[type=button] {
+
+.btn:active, .btn-floating:active, .btn-floating-large:active, .btn-small:active, input[type=button] {
     box-shadow: none;
 }
 
@@ -141,5 +142,5 @@
 .input:not(:valid) .validate{color:#f44336}
 
 input[type=checkbox].check,input[type=radio].radio{width:24px;height:24px;position:relative;top:6px}
-input[type=checkbox].check:checked+.validate,input[type=radio].radio:checked+.validate{color:#009688} 
+input[type=checkbox].check:checked+.validate,input[type=radio].radio:checked+.validate{color:#009688}
 input[type=checkbox].check:disabled+.validate,input[type=radio].radio:disabled+.validate{color:#aaa}
