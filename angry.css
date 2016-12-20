@@ -812,7 +812,8 @@ template {
   text-align: center;
   transition: .2s ease-out;
   cursor: pointer;
-  white-space: nowrap; }
+  white-space: nowrap;
+  margin: 1px; }
 
 .btn {
   padding: 8px 16px; }
@@ -837,6 +838,7 @@ template {
   z-index: 1;
   padding: 0;
   border-radius: 50%;
+  border-width: 0;
   transition: .3s;
   cursor: pointer;
   font-size: 24px; }
@@ -964,7 +966,8 @@ nav.navbar {
     background-color: #ddd; }
   @media screen and (min-width: 800px) {
     nav.navbar ul li {
-      display: inline-block !important; }
+      display: inline-block !important;
+      float: left; }
     nav.navbar li.menu {
       display: none !important; }
     nav.navbar li.dropdown {
@@ -1389,7 +1392,7 @@ table, th, td {
   text-align: center; }
 
 .tab td, .tab th, .tab-border td, .tab-border th {
-  padding: 6px 8px;
+  padding: 6px 3px;
   display: table-cell;
   text-align: left;
   vertical-align: top; }
