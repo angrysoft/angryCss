@@ -1,88 +1,5 @@
-/*
-nav.navbar{
-    background-color: #f3f3f3;
-    white-space: nowrap;
-
-    & ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        max-height: 47px;
-        -webkit-transition: all .5s ease-in-out 0s;
-        -moz-transition: all .5s ease-in-out 0s;
-        -ms-transition: all .5s ease-in-out 0s;
-        -o-transition: all .5s ease-in-out 0s;
-        transition: all .5s ease-in-out 0s;
-        position: relative;
-    }
-    & li.header a {
-        font-weight: bold;
-        padding-bottom: 13px;
-        margin-right: 10%;
-    }
-    & li.menu{
-        display: block;
-        float: left;
-        margin-left: 15px;
-    }
-    & li.menu a:active & li:not(.header) {
-      display: block;
-    }
-    & li {
-        float: none;
-    }
-    & li a, a:visited {
-        display: block;
-        color: #666;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        -webkit-transition:all 0.3s ease;
-        transition:all 0.3s ease
-    }
-    & ul.showMenu {
-      max-height: 1000px; 
-    }
-
-    & a:hover:not(.active) {
-      color: #ccc;
-    }
-    & a.active {
-      color: black;
-      background-color: #ddd;
-    }
-    
-
-    
-    @media screen and (min-width: 800px){
-        & ul li {
-            display: inline-block !important;
-        }
-        
-        & li.menu {
-            display: none !important;
-        }
-        & li.dropdown {
-          display: inline-block;
-        }
-    
-        & .dropdown-content {
-          display: none;
-          position: absolute;
-          min-width: 160px;
-        }
-
-        & li.dropdown:hover .dropdown-content {
-          display: block;
-        }
-    }
-    
-}
-*/
-
 nav.navbar {
-    background-color: #f3f3f3;
+    position: relative;
     display: flex;
     flex-direction: column;
     max-height: 46px;
@@ -92,6 +9,7 @@ nav.navbar {
     -ms-transition: all 0.5s cubic-bezier(1, 1, 0, 0) 0s;
     -o-transition: all 0.5s cubic-bezier(1, 1, 0, 0) 0s;
     transition: all 0.5s cubic-bezier(1, 1, 0, 0) 0s;
+    background-color: #f3f3f3;
 
     & header {
         display: flex;
@@ -123,11 +41,8 @@ nav.navbar {
         visibility: hidden;
     }
 
-    & .dropdown-content {
-        display: flex;
-        overflow: hidden;
-        flex-direction: column;
-        max-height: 0;
+    & .dropdown {
+        background: inherit;
         -webkit-transition: all .3s ease-in-out 0s;
         -moz-transition: all .3s ease-in-out 0s;
         -ms-transition: all .3s ease-in-out 0s;
@@ -135,9 +50,20 @@ nav.navbar {
         transition: all .3s ease-in-out 0s;
     }
 
+    & .dropdown-content {
+        display: none;
+        flex-direction: column;
+        -webkit-transition: all .3s ease-in-out 0s;
+        -moz-transition: all .3s ease-in-out 0s;
+        -ms-transition: all .3s ease-in-out 0s;
+        -o-transition: all .3s ease-in-out 0s;
+        transition: all .3s ease-in-out 0s;
+        background: inherit;
+    }
+
 
     & .dropdown:hover .dropdown-content {
-        max-height:100vh;
+        display: flex;
     }
 
     & a, a:visited {
@@ -168,9 +94,10 @@ nav.show-menu {
     }
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 801px) {
     nav.navbar {
         flex-direction: row;
+        overflow: initial;
 
         & header > .menu {
             display: none;
@@ -178,6 +105,15 @@ nav.show-menu {
 
         & > div {
             visibility: visible;
+        }
+
+        & .dropdown-content {
+            position: absolute;
+            display: none;
+        }
+
+        & .dropdown:hover .dropdown-content {
+            display:flex;
         }
 
         & div.right {

@@ -40,35 +40,9 @@
     animation-duration: .3s;
     animation-name: zoomIn;
 }
-/*
-.modal > .modal-content {
-    width: 100%;
-}
-
-.modal-dialog > .modal-content {
-    width: 80%;
-}
-
-.modal-small > .modal-content {
-    width: 80%;
-}
-
-@media screen and (min-width: 800px) {
-    .modal > .modal-content {
-        width: 80%;
-    }
-
-    .modal-dialog > .modal-content {
-        width: 40%;
-    }
-
-    .modal-small > .modal-content {
-        width: 20%;
-    }
-}
-*/
 
 .modal-header{
+    display: flex;
     border-color: black;
     padding: .8rem;
     font-weight: bold;
@@ -79,6 +53,7 @@
 
 .modal-body {
     padding: 1rem;
+    display: flex;
 }
 
 .modal-body > * {
@@ -86,6 +61,7 @@
 }
 
 .modal-footer {
+    display:flex;
     border-color: black;
     padding: .8rem;
     font-weight: bold;
@@ -100,6 +76,7 @@
 
 
 .close {
+    margin-left: auto;
     color: #777;
     float: right;
     font-size: 1.2rem;

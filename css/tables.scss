@@ -20,7 +20,8 @@ td {
 .table-bordered {
     border:1px solid #ccc;
 
-    & td {
+    & td,
+    & th {
         border:1px solid #ccc;
     }
 }
@@ -45,7 +46,12 @@ td {
 
 .td-center tr th,
 .td-center tr td{
-    text-align:center;
+    text-align: center;
+}
+
+.td-right tr th,
+.td-right tr td{
+    text-align: right;
 }
 
 .table td,
@@ -54,6 +60,8 @@ td {
 .table-bordered th{
     padding: .5rem;
     text-align:left;
+    word-wrap: break-word;
+    word-break: break-word;
 }
 
 .table th:first-child,
