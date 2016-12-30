@@ -1,26 +1,20 @@
-ul.pager {
-    padding: 5px;
-    overflow: hidden;
-    list-style-type: none !important;
-    & li a {
+div.pager {
+    display:flex;
+    justify-content: space-between;
+
+    & a {
         display: block;
         color: #666;
         background-color: #fff;
         text-align: center;
-        padding: 10px 12px;
+        padding: 0.5rem;
+        margin: 0.5rem;
         text-decoration: none;
         -webkit-transition:all 0.3s ease;
         transition:all 0.3s ease
     }
-    & li a:hover {
+
+    & a:hover {
         color: #ccc !important;
-    }
-    & li:first-child {
-        overflow: hidden;
-        float: left;
-    }
-    & li:last-child {
-        overflow: hidden;
-        float: right;
     }
 }

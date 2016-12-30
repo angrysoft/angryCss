@@ -1,13 +1,11 @@
 function menuToggle() {
-    var li = document.querySelectorAll('nav > ul');
-    var lilen = li.length;
-    for (var i=0; i < lilen ;i++) {
-        li[i].classList.toggle('showMenu');
-    }
+    var li = document.querySelector('nav.navbar');
+    li.classList.toggle('show-menu');
 }
 
-function menuClick() {
-    var m = document.querySelector('nav > ul > li.menu');
+
+function menuOnClick() {
+    var m = document.querySelector('.navbar .menu');
     if (m) {
         m.addEventListener('click', menuToggle);
     }
@@ -62,5 +60,5 @@ function debounce(func, wait, immediate) {
 
 //window.addEventListener('resize', myEfficientFn);
 
-addLoadListener(menuClick);
+addLoadListener(menuOnClick);
 
