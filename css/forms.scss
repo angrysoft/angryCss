@@ -142,7 +142,8 @@
     padding: 5px;
  }
 
-input[type=file] {
+input[type=file],
+input[type=range] {
     width: 100%;
 }
 
@@ -164,6 +165,7 @@ input[type=radio] {
 }
 
 .textarea {
+    width: 100%;
     padding: 12px 20px;
     box-sizing: border-box;
     border: 1px solid #ccc;
