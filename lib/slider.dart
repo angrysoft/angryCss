@@ -19,6 +19,7 @@ class Slider {
   Timer delayTimer;
   String animationNext = '';
   String animationPrev = '';
+  int delayFrames = 240; //( 4000 / (1000 / 60) ).round();
 
   String get animationNameNext => this.animationNext;
   void set animationNameNext(String name) {
@@ -69,14 +70,14 @@ class Slider {
 
   void addImage(String imagePath) {
     this.slideList.add(imagePath);
-    //print(imagePath);
   }
 
   void run() {
     this.mainImage.src = this.slideList.first;
     this.currentImageNum = 0;
     this.setImages();
-    this.delayTimer = new Timer.periodic(delaySec, (Timer t) => this.nextSlide());
+    //this.delayTimer = new Timer.periodic(delaySec, (Timer t) => this.nextSlide());
+    this.changeSlide()
   }
 
   void nextSlide() {
@@ -103,7 +104,7 @@ class Slider {
     this.setImages();
   }
 
-  void changeSlide(String src) {
+  void changeSlide() {
 
   }
 
@@ -121,7 +122,6 @@ class Slider {
     if (this.prevImageNum < 0) {
       this.prevImageNum = lastImageNum;
     }
-    //print('after <-(${this.prevImageNum})=(${this.currentImageNum})=(${this.nextImageNum})->, ${lastImageNum}');
     this.nextImage.src = this.slideList[this.nextImageNum];
     this.prevImage.src = this.slideList[this.prevImageNum];
   }
