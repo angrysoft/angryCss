@@ -14,12 +14,17 @@ class Slider {
   DivElement slider;
   Element arrowLeft;
   Element arrowRight;
-  Duration delaySec = new Duration(seconds: 4);
   Duration animationTimeSec = new Duration(seconds: 1);
-  Timer delayTimer;
   String animationNext = '';
   String animationPrev = '';
-  int delayFrames = 240; //( 4000 / (1000 / 60) ).round();
+  num delayTime = 4000;
+  StreamSubscription eventBtnNext = null;
+  StreamSubscription eventBtnPrev = null;
+  num animationTime = 1000;
+  num currentTime = 0;
+  num startTime = 0;
+  num stopTime = 0;
+  num animationStop = -1;
 
   String get animationNameNext => this.animationNext;
   void set animationNameNext(String name) {
@@ -31,14 +36,14 @@ class Slider {
     this.animationPrev = name;
   }
 
-  int get animationTime => this.animationTimeSec.inSeconds;
-  void set animaitonTime(int sec) {
-    this.animationTimeSec = new Duration(seconds: sec);
+  int get animationFadeTime => (this.animationTime / 1000).round();
+  void set animationFadeTime(int sec) {
+    this.animationTime = sec * 1000;
   }
 
-  int get delay => this.delaySec.inSeconds;
+  int get delay => (this.delayTime / 1000).round();
   void set delay(int sec) {
-    this.delaySec = new Duration(seconds: sec);
+    this.delayTime = sec * 1000;
   }
 
   Slider(String id) {
@@ -55,12 +60,27 @@ class Slider {
       this.slider.append(this.mainImage);
     }
 
+    this.setArrows();
+
+  }
+
+  void setArrows() {
     if (this.arrowLeft != null) {
-      this.arrowLeft.onClick.listen((Event e) => this.prevSlide());
+      this.eventBtnPrev = this.arrowLeft.onClick.listen((Event e) => this.prevSlide());
     }
 
     if (this.arrowRight != null) {
-      this.arrowRight.onClick.listen((Event e) => this.nextSlide());
+      this.eventBtnNext = this.arrowRight.onClick.listen((Event e) => this.nextSlide());
+    }
+  }
+
+  void unsetArrows() {
+    if (this.arrowLeft != null) {
+      this.eventBtnPrev.cancel();
+    }
+
+    if (this.arrowRight != null) {
+      this.eventBtnNext.cancel();
     }
   }
 
@@ -76,35 +96,66 @@ class Slider {
     this.mainImage.src = this.slideList.first;
     this.currentImageNum = 0;
     this.setImages();
-    //this.delayTimer = new Timer.periodic(delaySec, (Timer t) => this.nextSlide());
-    this.changeSlide()
+    window.animationFrame.then(this.setStartFrame);
   }
 
   void nextSlide() {
+    this.stopTime = this.currentTime + this.delayTime;
     this.mainImage.classes.add(this.animationNext);
     this.lastImage.src = this.mainImage.currentSrc;
     this.mainImage.src = this.nextImage.currentSrc;
-    new Timer(this.animationTimeSec, ()=> this.mainImage.classes.remove(this.animationNext));
+    this.unsetArrows();
     this.currentImageNum++;
     if (this.currentImageNum >= this.slideList.length) {
       this.currentImageNum = 0;
     }
     this.setImages();
+    window.animationFrame.then(this.animationRemove);
+    //new Timer(this.animationTimeSec, ()=> this.mainImage.classes.remove(this.animationNext));
   }
 
   void prevSlide() {
+    this.stopTime = this.currentTime + this.delayTime;
     this.mainImage.classes.add(this.animationPrev);
     this.lastImage.src = this.mainImage.currentSrc;
     this.mainImage.src = this.prevImage.currentSrc;
-    new Timer(this.animationTimeSec, ()=> this.mainImage.classes.remove(this.animationPrev));
+    this.unsetArrows();
     this.currentImageNum--;
     if (this.currentImageNum < 0) {
       this.currentImageNum = this.slideList.length - 1;
     }
     this.setImages();
+    window.animationFrame.then(this.animationRemove);
+    //new Timer(this.animationTimeSec, ()=> this.mainImage.classes.remove(this.animationPrev));
   }
 
-  void changeSlide() {
+  void animationRemove(num time) {
+    if (this.animationStop < 0 ) {
+      this.animationStop = time + this.animationTime;
+    }
+
+    if (time >= this.animationStop) {
+      this.mainImage.classes.remove(this.animationNext);
+      this.mainImage.classes.remove(this.animationPrev);
+      this.animationStop = -1;
+      this.setArrows();
+    } else {
+      window.animationFrame.then(this.animationRemove);
+    }
+  }
+
+  void setStartFrame(num time) {
+    this.startTime = time;
+    this.stopTime = time + this.delayTime;
+    window.animationFrame.then(this.changeSlide);
+  }
+
+  void changeSlide(num time) {
+    this.currentTime = time;
+    if (time >= this.stopTime) {
+      this.nextSlide();
+    }
+    window.animationFrame.then(this.changeSlide);
 
   }
 
