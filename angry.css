@@ -1513,7 +1513,8 @@ template {
 .btn-floating {
   background: rgba(158, 158, 158, 0.2);
   color: #000;
-  cursor: pointer; }
+  cursor: pointer;
+  border: none; }
 
 .btn,
 .btn-small {
@@ -1638,6 +1639,9 @@ input[type=checkbox].check:checked + .validate, input[type=radio].radio:checked 
 input[type=checkbox].check:disabled + .validate, input[type=radio].radio:disabled + .validate {
   color: #aaa; }
 
+.dark input::selection {
+  background: white; }
+
 nav.navbar,
 nav.navbar-image {
   position: relative;
@@ -1761,6 +1765,17 @@ nav.show-menu {
   nav.show-menu > div {
     visibility: visible; }
 
+.card.dark,
+.panel.dark {
+  background: #000;
+  box-shadow: 0 2px 2px 0 rgba(127, 127, 127, 0.14), 0 3px 1px -2px rgba(127, 127, 127, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  color: white; }
+  .card.dark header,
+  .panel.dark header {
+    border-color: black;
+    box-shadow: 0 2px 2px 0 rgba(127, 127, 127, 0.2); }
+
+.card,
 .panel {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1774,17 +1789,19 @@ nav.show-menu {
   overflow: hidden;
   z-index: 1;
   position: relative;
-  background: #fff;
   border-radius: 2px;
   box-sizing: border-box;
   margin: .5rem;
+  background: #fff;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
+  .card header,
   .panel header {
-    border-color: black;
     padding: 1rem;
     font-weight: bold;
     font-size: 1.3rem;
+    border-color: black;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2); }
+  .card section,
   .panel section {
     padding: 1rem; }
 
@@ -1996,6 +2013,11 @@ nav.dark-brown li.header a {
 .modal {
   background-color: rgba(0, 0, 0, 0.4); }
 
+.dark .modal-content,
+.dark .modal-header {
+  background: black;
+  color: white; }
+
 .modal-content {
   position: relative;
   margin: auto;
@@ -2029,6 +2051,9 @@ nav.dark-brown li.header a {
   font-size: 1.3rem;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
   background-color: #F5F5F5; }
+
+.dark .modal-header {
+  box-shadow: 0 2px 2px 0 rgba(127, 127, 127, 0.2); }
 
 .modal-body {
   padding: 1rem; }
@@ -2129,19 +2154,19 @@ th,
 td {
   border: none; }
 
+.table.dark {
+  color: white;
+  box-shadow: 0 2px 2px 0 rgba(127, 127, 127, 0.14), 0 3px 1px -2px rgba(127, 127, 127, 0.2), 0 1px 5px 0 rgba(127, 127, 127, 0.12); }
+  .table.dark tbody tr {
+    border-top: 1px solid rgba(0, 0, 0, 0.14); }
+  .table.dark thead,
+  .table.dark tbody {
+    background: black; }
+
 .table {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
   .table tbody tr {
     border-top: 1px solid rgba(100, 100, 100, 0.14); }
-
-.table-dark {
-  color: white;
-  box-shadow: 0 2px 2px 0 rgba(127, 127, 127, 0.14), 0 3px 1px -2px rgba(127, 127, 127, 0.2), 0 1px 5px 0 rgba(127, 127, 127, 0.12); }
-  .table-dark tbody tr {
-    border-top: 1px solid rgba(0, 0, 0, 0.14); }
-  .table-dark thead,
-  .table-dark tbody {
-    background: black; }
 
 .table-bordered {
   border: 1px solid #ccc; }
@@ -2149,10 +2174,10 @@ td {
   .table-bordered th {
     border: 1px solid #ccc; }
 
-.table-dark.striped tbody tr:nth-child(even) {
+.dark.striped tbody tr:nth-child(even) {
   background-color: black; }
 
-.table-dark.striped tbody tr:nth-child(odd) {
+.dark.striped tbody tr:nth-child(odd) {
   background-color: #232323; }
 
 .striped tbody tr:nth-child(even) {
@@ -2161,16 +2186,13 @@ td {
 .striped tbody tr:nth-child(odd) {
   background-color: #fff; }
 
-.table-dark.table-hover tbody tr,
 .table-hover tbody tr {
   transition: background-color .25s ease; }
 
-.table-dark.table-hover tbody tr:hover {
+.dark.table-hover tbody tr:hover,
+.table-hover tbody tr:hover {
   background-color: #ccc;
   color: black; }
-
-.table-hover tbody tr:hover {
-  background-color: #ccc; }
 
 .td-center tr th,
 .td-center tr td {
@@ -2182,8 +2204,6 @@ td {
 
 .table td,
 .table th,
-.table-dark td,
-.table-dark th,
 .table-bordered td,
 .table-bordered th {
   padding: .5rem;
@@ -2193,14 +2213,15 @@ td {
 
 .table th:first-child,
 .table td:first-child,
-.table-dark th:first-child,
-.table-dark td:first-child,
 .table-bordered th:first-child,
 .table-bordered td:first-child {
   padding-left: 1rem; }
 
 tbody tr.selected {
   background: #ccc !important; }
+
+.expoanded {
+  width: 100%; }
 
 .no-shadow {
   box-shadow: none !important; }
