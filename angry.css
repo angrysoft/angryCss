@@ -2134,11 +2134,26 @@ td {
   .table tbody tr {
     border-top: 1px solid rgba(100, 100, 100, 0.14); }
 
+.table-dark {
+  color: white;
+  box-shadow: 0 2px 2px 0 rgba(127, 127, 127, 0.14), 0 3px 1px -2px rgba(127, 127, 127, 0.2), 0 1px 5px 0 rgba(127, 127, 127, 0.12); }
+  .table-dark tbody tr {
+    border-top: 1px solid rgba(0, 0, 0, 0.14); }
+  .table-dark thead,
+  .table-dark tbody {
+    background: black; }
+
 .table-bordered {
   border: 1px solid #ccc; }
   .table-bordered td,
   .table-bordered th {
     border: 1px solid #ccc; }
+
+.table-dark.striped tbody tr:nth-child(even) {
+  background-color: black; }
+
+.table-dark.striped tbody tr:nth-child(odd) {
+  background-color: #232323; }
 
 .striped tbody tr:nth-child(even) {
   background-color: #EEEEEE; }
@@ -2146,8 +2161,13 @@ td {
 .striped tbody tr:nth-child(odd) {
   background-color: #fff; }
 
+.table-dark.table-hover tbody tr,
 .table-hover tbody tr {
   transition: background-color .25s ease; }
+
+.table-dark.table-hover tbody tr:hover {
+  background-color: #ccc;
+  color: black; }
 
 .table-hover tbody tr:hover {
   background-color: #ccc; }
@@ -2162,6 +2182,8 @@ td {
 
 .table td,
 .table th,
+.table-dark td,
+.table-dark th,
 .table-bordered td,
 .table-bordered th {
   padding: .5rem;
@@ -2171,6 +2193,8 @@ td {
 
 .table th:first-child,
 .table td:first-child,
+.table-dark th:first-child,
+.table-dark td:first-child,
 .table-bordered th:first-child,
 .table-bordered td:first-child {
   padding-left: 1rem; }
