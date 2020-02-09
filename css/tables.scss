@@ -9,6 +9,20 @@ td {
     border:none
 }
 
+.table.dark {
+    color: white;
+    box-shadow: 0 2px 2px 0 rgba(127,127,127,.14), 0 3px 1px -2px rgba(127,127,127,.2), 0 1px 5px 0 rgba(127,127,127,.12);
+
+    & tbody tr {
+        border-top: 1px solid rgba(0,0,0,.14);
+    }
+    
+    & thead,
+    & tbody {
+        background: rgb(0,0,0);
+    }
+}
+
 .table {
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
 
@@ -26,6 +40,16 @@ td {
     }
 }
 
+.dark.striped {
+    & tbody tr:nth-child(even) {
+        background-color: rgb(0,0,0);
+    }
+
+    & tbody tr:nth-child(odd){
+        background-color: rgb(35,35,35);
+    }
+}
+
 .striped {
     & tbody tr:nth-child(even) {
         background-color:#EEEEEE;
@@ -40,8 +64,10 @@ td {
     transition:background-color .25s ease;
 }
 
+.dark.table-hover tbody tr:hover,
 .table-hover tbody tr:hover {
     background-color:#ccc;
+    color: black;
 }
 
 .td-center tr th,
@@ -73,4 +99,8 @@ td {
 
 tbody tr.selected {
     background: #ccc !important;
+}
+
+.expoanded {
+    width:100%;
 }
