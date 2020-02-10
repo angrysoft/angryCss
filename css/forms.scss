@@ -123,11 +123,12 @@
     display: block;
     font-size: 16px;
     margin: 0;
-    padding: 4px 0;
+    padding: 0.5rem;
     width: 100%;
     background: 0 0;
     text-align: left;
     color: inherit;
+    
 }
 
 .input {
@@ -136,8 +137,10 @@
 
 
     &:focus {
+	border: 1px solid rgba(0,0,0,.2);
         outline: none;
-        border-bottom-width: 2px;
+        border-width: 2px;
+        border-radius: 5px;
     }
 }
 
@@ -145,16 +148,17 @@
     outline: none;
     border: 1px solid rgba(0,0,0,.2);
     background-color: #fff;
+    border-radius: 5px;
 
     &:focus {
         border-width: 2px;
     }
 }
-
+/*
 .label, input[type=file] {
     color:#009688;
  }
-
+*/
 input[type=file],
 input[type=range] {
     width: 100%;
@@ -254,12 +258,10 @@ input[type=radio] {
 }
  
 .select {
-    padding: 5px;
+    padding: 0.5rem;
     background: transparent;
-    color:#009688;
-    padding: 8px 20px;
     border: none;
-    border-radius: 2px;
+    border-radius: 5px;
     background-color: #f1f1f1;
     width: 100%;
 }
