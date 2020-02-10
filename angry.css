@@ -1473,11 +1473,19 @@ template {
   -webkit-flex-direction: column;
   flex-direction: column; }
 
+.from > * {
+  padding-top: 0.2em;
+  paddint-bottom: 0.2em; }
+
 .form-inline {
   padding: 0.2em !important;
   display: flex;
   -webkit-flex-direction: row;
   flex-direction: row; }
+
+.form-inline > * {
+  padding-left: 0.2em;
+  padding-right: 0.2em; }
 
 /*
 .btn , .btn-small {
