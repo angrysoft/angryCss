@@ -30,37 +30,124 @@
   user-select: none;
 }
 
-.padding-01 {
-  padding: 0.1rem; }
-
-.padding-02 {
-  padding: 0.2rem; }
-
-.padding-03 {
-  padding: 0.3rem; }
-
-.padding-04 {
-  padding: 0.4rem; }
-
-.padding-05 {
-  padding: 0.5rem; }
-
-.padding-06 {
-  padding: 0.6rem; }
-
-.padding-07 {
-  padding: 0.7rem; }
-
-.padding-08 {
-  padding: 0.8rem; }
-
-.padding-09 {
-  padding: 0.9rem; }
-
+@for $i from 1 through 9 {
+.padding-0#{$i} {
+  padding: #{$i/10}rem;
+}
+}
 
 @for $i from 1 through 9 {
 .padding-#{$i}0 {
   padding: #{$i}rem;
+}
+}
+
+@for $i from 1 through 9 {
+.padding-top-0#{$i} {
+  padding-top: #{$i/10}rem;
+}
+}
+
+@for $i from 1 through 9 {
+.padding-top-#{$i}0 {
+  padding-top: #{$i}rem;
+}
+}
+
+@for $i from 1 through 9 {
+.padding-bottom-0#{$i} {
+  padding-bottom: #{$i/10}rem;
+}
+}
+
+@for $i from 1 through 9 {
+.padding-bottom-#{$i}0 {
+  padding-bottom: #{$i}rem;
+}
+}
+
+@for $i from 1 through 9 {
+.padding-left-0#{$i} {
+  padding-left: #{$i/10}rem;
+}
+}
+
+@for $i from 1 through 9 {
+.padding-left-#{$i}0 {
+  padding-left: #{$i}rem;
+}
+}
+
+@for $i from 1 through 9 {
+.padding-right-0#{$i} {
+  padding-right: #{$i/10}rem;
+}
+}
+
+@for $i from 1 through 9 {
+.padding-right-#{$i}0 {
+  padding-right: #{$i}rem;
+}
+}
+
+
+@for $i from 1 through 9 {
+.margin-0#{$i} {
+  margin: #{$i/10}rem;
+}
+}
+
+@for $i from 1 through 9 {
+.margin-#{$i}0 {
+  margin: #{$i}rem;
+}
+}
+
+@for $i from 1 through 9 {
+.margin-top-0#{$i} {
+  margin-top: #{$i/10}rem;
+}
+}
+
+@for $i from 1 through 9 {
+.margin-top-#{$i}0 {
+  margin-top: #{$i}rem;
+}
+}
+
+@for $i from 1 through 9 {
+.margin-bottom-0#{$i} {
+  margin-bottom: #{$i/10}rem;
+}
+}
+
+@for $i from 1 through 9 {
+.margin-bottom-#{$i}0 {
+  margin-bottom: #{$i}rem;
+}
+}
+
+@for $i from 1 through 9 {
+.margin-left-0#{$i} {
+  margin-left: #{$i/10}rem;
+}
+}
+
+@for $i from 1 through 9 {
+.margin-left-#{$i}0 {
+  margin-left: #{$i}rem;
+}
+}
+
+@for $i from 1 through 9 {
+.margin-right-0#{$i} {
+  margin-right: #{$i/10}rem;
+}
+}
+
+@for $i from 1 through 9 {
+.margin-right-#{$i}0 {
+  margin-right: #{$i}rem;
 }
 }
 
