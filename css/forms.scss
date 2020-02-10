@@ -54,7 +54,8 @@
 
 .btn,
 .btn-small,
-.btn-floating {
+.btn-floating,
+.form button {
     background: rgba(158,158,158,.2);
     color: #000;
     cursor: pointer;
@@ -62,7 +63,8 @@
 }
 
 .btn,
-.btn-small {
+.btn-small,
+.form button {
     border: none;
     border-radius: 2px;
     position: relative;
@@ -80,7 +82,8 @@
     box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
 }
 
-.btn {
+.btn,
+.form button {
     font-size: 14px;
     height: 36px;
     width: 100%;
@@ -100,7 +103,8 @@
 
 .btn:active,
 .btn-floating:active,
-.btn-small:active {
+.btn-small:active,
+.form button:active {
     box-shadow: none;
 }
 
@@ -119,7 +123,8 @@
 }
 
 .input,
-.input-border {
+.input-border,
+.form input[type=text] {
     display: block;
     font-size: 16px;
     margin: 0;
@@ -131,7 +136,7 @@
     
 }
 
-.input {
+.input, .form input[type=text] {
     border: none;
     border-bottom: 1px solid rgba(0,0,0,.12);
 
@@ -155,9 +160,10 @@
     }
 }
 
-.label, input[type=file] {
+.label, input[type=file], .form label {
     line-height: 2rem;
  }
+
 input[type=file],
 input[type=range] {
     width: 100%;
@@ -256,7 +262,7 @@ input[type=radio] {
     margin: 0.2em;
 }
  
-.select {
+.select, .form select {
     padding: 0.5rem;
     background: transparent;
     border: none;
@@ -265,7 +271,7 @@ input[type=radio] {
     width: 100%;
 }
 
-.textarea {
+.textarea, .form textarea {
     width: 100%;
     padding: 12px 20px;
     box-sizing: border-box;
