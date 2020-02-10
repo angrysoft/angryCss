@@ -1604,11 +1604,9 @@ template {
   .input-border:focus {
     border-width: 2px; }
 
-/*
 .label, input[type=file] {
-    color:#009688;
- }
-*/
+  line-height: 2rem; }
+
 input[type=file],
 input[type=range] {
   width: 100%; }
