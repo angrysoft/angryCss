@@ -1519,7 +1519,11 @@ template {
 .btn,
 .btn-small,
 .btn-floating,
-.form button {
+.form button,
+.form input[type=submit],
+.form input[type=button],
+.form input[type=color],
+.form input[type=reset] {
   background: rgba(158, 158, 158, 0.2);
   color: #000;
   cursor: pointer;
@@ -1527,7 +1531,11 @@ template {
 
 .btn,
 .btn-small,
-.form button {
+.form button,
+.form input[type=submit],
+.form input[type=button],
+.form input[type=color],
+.form input[type=reset] {
   border: none;
   border-radius: 2px;
   position: relative;
@@ -1545,7 +1553,11 @@ template {
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2); }
 
 .btn,
-.form button {
+.form button,
+.form input[type=submit],
+.form input[type=button],
+.form input[type=color],
+.form input[type=reset] {
   font-size: 14px;
   height: 36px;
   width: 100%;
@@ -1564,7 +1576,11 @@ template {
 .btn:active,
 .btn-floating:active,
 .btn-small:active,
-.form button:active {
+.form button:active,
+.form input[type=submit]:active,
+.form input[type=button]:active,
+.form input[type=color]:active,
+.form input[type=reset]:active {
   box-shadow: none; }
 
 .btn-floating {
@@ -1582,7 +1598,15 @@ template {
 
 .input,
 .input-border,
-.form input[type=text] {
+.form input[type=text],
+.form input[type=email],
+.form input[type=password],
+.form input[type=search],
+.form input[type=number],
+.form input[type=url],
+.form input[type=time],
+.form input[type=date],
+.form input[type=tel] {
   display: block;
   font-size: 16px;
   margin: 0;
@@ -1592,24 +1616,54 @@ template {
   text-align: left;
   color: inherit; }
 
-.input, .form input[type=text] {
+.input,
+.form input[type=text],
+.form input[type=email],
+.form input[type=password],
+.form input[type=search],
+.form input[type=number],
+.form input[type=url],
+.form input[type=time],
+.form input[type=date],
+.form input[type=tel] {
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
-  .input:focus, .form input[type=text]:focus {
+  .input:focus,
+  .form input[type=text]:focus,
+  .form input[type=email]:focus,
+  .form input[type=password]:focus,
+  .form input[type=search]:focus,
+  .form input[type=number]:focus,
+  .form input[type=url]:focus,
+  .form input[type=time]:focus,
+  .form input[type=date]:focus,
+  .form input[type=tel]:focus {
     border: 1px solid rgba(0, 0, 0, 0.2);
     outline: none;
     border-width: 2px;
     border-radius: 5px; }
 
-.input-border {
+.input-border,
+input .border {
   outline: none;
   border: 1px solid rgba(0, 0, 0, 0.2);
   background-color: #fff;
   border-radius: 5px; }
-  .input-border:focus {
+  .input-border:focus,
+  input .border:focus {
     border-width: 2px; }
 
-.label, input[type=file], .form label {
+.label, .form label {
+  line-height: 2rem; }
+
+.form input[type=color],
+input[type=color] {
+  padding: 0; }
+
+input[type=file] {
+  font-size: 14px;
+  width: 100%;
+  min-width: 64px;
   line-height: 2rem; }
 
 input[type=file],

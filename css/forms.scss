@@ -55,7 +55,11 @@
 .btn,
 .btn-small,
 .btn-floating,
-.form button {
+.form button,
+.form input[type=submit],
+.form input[type=button],
+.form input[type=color],
+.form input[type=reset] {
     background: rgba(158,158,158,.2);
     color: #000;
     cursor: pointer;
@@ -64,7 +68,11 @@
 
 .btn,
 .btn-small,
-.form button {
+.form button,
+.form input[type=submit],
+.form input[type=button],
+.form input[type=color],
+.form input[type=reset] {
     border: none;
     border-radius: 2px;
     position: relative;
@@ -83,7 +91,11 @@
 }
 
 .btn,
-.form button {
+.form button,
+.form input[type=submit],
+.form input[type=button],
+.form input[type=color],
+.form input[type=reset] {
     font-size: 14px;
     height: 36px;
     width: 100%;
@@ -104,7 +116,11 @@
 .btn:active,
 .btn-floating:active,
 .btn-small:active,
-.form button:active {
+.form button:active,
+.form input[type=submit]:active,
+.form input[type=button]:active,
+.form input[type=color]:active,
+.form input[type=reset]:active {
     box-shadow: none;
 }
 
@@ -124,7 +140,15 @@
 
 .input,
 .input-border,
-.form input[type=text] {
+.form input[type=text],
+.form input[type=email],
+.form input[type=password],
+.form input[type=search],
+.form input[type=number],
+.form input[type=url],
+.form input[type=time],
+.form input[type=date],
+.form input[type=tel] {
     display: block;
     font-size: 16px;
     margin: 0;
@@ -136,7 +160,16 @@
     
 }
 
-.input, .form input[type=text] {
+.input,
+.form input[type=text],
+.form input[type=email],
+.form input[type=password],
+.form input[type=search],
+.form input[type=number],
+.form input[type=url],
+.form input[type=time],
+.form input[type=date],
+.form input[type=tel] {
     border: none;
     border-bottom: 1px solid rgba(0,0,0,.12);
 
@@ -149,7 +182,8 @@
     }
 }
 
-.input-border {
+.input-border,
+input .border {
     outline: none;
     border: 1px solid rgba(0,0,0,.2);
     background-color: #fff;
@@ -160,9 +194,21 @@
     }
 }
 
-.label, input[type=file], .form label {
+.label, .form label {
     line-height: 2rem;
  }
+
+ .form input[type=color],
+ input[type=color] {
+   padding: 0;
+ }
+
+input[type=file] {
+  font-size: 14px;
+  width: 100%;
+  min-width: 64px;
+  line-height: 2rem;
+}
 
 input[type=file],
 input[type=range] {
