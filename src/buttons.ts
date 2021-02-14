@@ -1,14 +1,14 @@
 
 export class Button extends HTMLElement {
     // private name:string;
-    private const root;
-    private const sheet:CSSStyleSheet;
+    private root;
+    private sheet:CSSStyleSheet;
 
     constructor() {
         super();
         this.sheet = new CSSStyleSheet();
         /* Normalize */
-        sheet.insertRule(`button {
+        this.sheet.insertRule(`button {
             font-family: inherit;
             font-size: 100%;
             line-height: 1.15;
@@ -16,7 +16,7 @@ export class Button extends HTMLElement {
             overflow: visible;
           }`);
         
-        sheet.insertRule(`button {
+        this.sheet.insertRule(`button {
             position: relative;
             margin: 0;
             color: #000;
@@ -38,7 +38,7 @@ export class Button extends HTMLElement {
         }`);
         this.root = this.attachShadow({ mode: 'open'});
         // this.root.adopted
-        this.root.adoptedStyleSheets = 
+        this.root.adoptedStyleSheets = [ this.sheet ];
     }
 }
 
