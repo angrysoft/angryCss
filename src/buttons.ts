@@ -1,20 +1,12 @@
 
-export class Button extends HTMLElement {
+class Button extends HTMLElement {
     // private name:string;
     private root;
-    private sheet:CSSStyleSheet;
+    protected sheet:CSSStyleSheet;
 
     constructor() {
         super();
         this.sheet = new CSSStyleSheet();
-        /* Normalize */
-        this.sheet.insertRule(`button {
-            font-family: inherit;
-            font-size: 100%;
-            line-height: 1.15;
-            margin: 0;
-            overflow: visible;
-          }`);
         
         this.sheet.insertRule(`button {
             position: relative;
@@ -35,11 +27,60 @@ export class Button extends HTMLElement {
             text-align: center;
             vertical-align: middle;
             background: rgba(158,158,158,.2);
-        }`);
+        }`,0);
+
+        this.sheet.insertRule(`button {
+            font-size: 14px;
+            height: 36px;
+            width: 100%;
+            min-width: 64px;
+            padding: 0 16px;
+            line-height: 36px;
+        }`, 1);
+
+        this.sheet.insertRule(`button:active {box-shadow:none;}`, 2);
+
         this.root = this.attachShadow({ mode: 'open'});
-        // this.root.adopted
+    }
+    public connectedCallback() {
         this.root.adoptedStyleSheets = [ this.sheet ];
+        this.root.innerHTML = `<button><slot /></button>`
     }
 }
 
-window.customElements.define('btn', Button);
+class ButtonSmall extends Button {
+    constructor() {
+        super();
+        this.sheet.deleteRule(1);
+        this.sheet.insertRule(`button {
+            font-size: 12px;
+            height: 24px;
+            width: 100%;
+            min-width: 48px;
+            padding: 0 8px;
+            line-height: 24px;
+        }`, 1);
+    }
+}
+
+class ButtonFloating extends ButtonSmall {
+    constructor() {
+        super();
+        this.sheet.deleteRule(1);
+        this.sheet.insertRule(`button {
+            border-radius: 50%;
+            font-size: 24px;
+            height: 56px;
+            margin: auto;
+            min-width: 56px;
+            width: 56px;
+            padding: 0;
+            box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12), 0 1px 1px 0 rgba(0,0,0,.24);
+            line-height: normal;
+        }`, 1);
+    }
+}
+
+window.customElements.define('btn-normal', Button);
+window.customElements.define('btn-small', ButtonSmall);
+window.customElements.define('btn-floating', ButtonFloating);
