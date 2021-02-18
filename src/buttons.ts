@@ -1,7 +1,9 @@
-import { BaseComponent } from "./basecomponent.js";
+import { BaseComponent, Css } from "./basecomponent.js";
 
 
 class Button extends BaseComponent {
+    
+
     constructor() {
         super();
         this.sheet.insertRule(`button {
@@ -33,13 +35,12 @@ class Button extends BaseComponent {
 
         this.sheet.insertRule(`button:active {box-shadow:none;}`, 1);
 
+        this.html = `<button><slot /></button>`;
+        let css = new Css();
+        console.log(css);
     }
 
-    public connectedCallback() {
-        this.root.adoptedStyleSheets = [ this.sheet ];
-        this.root.innerHTML = `<button><slot /></button>`
-    }
-
+    
     static get observedAttributes() {
         return ['color'];
     }
