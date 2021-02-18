@@ -1,4 +1,4 @@
-import { BaseComponent, Css } from "./basecomponent.js";
+import { BaseComponent } from "./basecomponent.js";
 
 
 class Button extends BaseComponent {
@@ -36,27 +36,24 @@ class Button extends BaseComponent {
         this.sheet.insertRule(`button:active {box-shadow:none;}`, 1);
 
         this.html = `<button><slot /></button>`;
-        let css = new Css();
-        console.log(css);
     }
 
-    
     static get observedAttributes() {
         return ['color'];
     }
 
     public attributeChangedCallback(name:string, oldValue:string, newValue:string) {
         console.log(`${name}'s value has been changed from ${oldValue} to ${newValue}`);
-        // switch(name) {
-        //     case "color":
-        //         this.setColor(newValue);
-        //         break;
+        switch(name) {
+            case "color":
+                this.setColor(newValue);
+                break;
 
-        // }
+        }
     }
 
     private setColor(value:string) {
-        console.log(value);
+        console.log(`changed to ${value}`);
 
     }
     
